@@ -16,6 +16,10 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader1 = new FXMLLoader(HelloApplication.class.getResource("VisInsurence.fxml"));
         FXMLLoader fxmlLoader2 = new FXMLLoader(HelloApplication.class.getResource("VisTestResults.fxml"));
         FXMLLoader fxmlLoader3 = new FXMLLoader(HelloApplication.class.getResource("Vis3FreqTest.fxml"));
+        /// / ikrame ghraphes !!!!
+        FXMLLoader fxmlLoader4 = new FXMLLoader(HelloApplication.class.getResource("NumberPatientIKR.fxml"));
+        FXMLLoader fxmlLoader5 = new FXMLLoader(HelloApplication.class.getResource("AppointmentNumber.fxml"));
+
 
         // Create tabs for each graph
         TabPane tabPane = new TabPane();
@@ -26,9 +30,14 @@ public class HelloApplication extends Application {
         tab2.setClosable(false);
         Tab tab3 = new Tab("Frequency Test Graph", fxmlLoader3.load());
         tab3.setClosable(false);
+        /// ///
+        Tab tab4 = new Tab("Number of patient Per Year", fxmlLoader4.load());
+        tab4.setClosable(false);
+        Tab tab5 = new Tab("Number of Appointemtns", fxmlLoader5.load());
+        tab4.setClosable(false);
 
         // Add tabs to the TabPane
-        tabPane.getTabs().addAll(tab1, tab2, tab3);
+        tabPane.getTabs().addAll(tab1, tab2, tab3 , tab4 , tab5);
 
         // Set up the scene and stage
         Scene scene = new Scene(tabPane, 800, 600);
