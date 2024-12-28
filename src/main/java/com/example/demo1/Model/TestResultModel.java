@@ -31,6 +31,7 @@ public class TestResultModel {
 
     public List<MonthlyTest> getMonthlyTests() {
         List<MonthlyTest> results = new ArrayList<>();
+
         String query = """
             SELECT 
                 MONTHNAME(t.DateEffectue) AS Month, 
@@ -53,6 +54,7 @@ public class TestResultModel {
         } catch (SQLException e) {
             e.printStackTrace();
         }
+
         return results;
     }
 }

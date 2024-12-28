@@ -40,7 +40,7 @@ public class HelloApplication extends Application {
     @Override
     public void stop() {
         // Close the database connection when the application stops
-        DatabaseConnection.closeConnection();
+       // DatabaseConnection.closeConnection();
     }
 
     public static void main(String[] args) {

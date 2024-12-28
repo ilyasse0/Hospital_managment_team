@@ -6,12 +6,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 public class PatientModelForInssurence {
-    public double[] getPatientInsuranceData() throws SQLException {
+
+    public double[] getPatientInsuranceData() {
         String query = """
         SELECT 
-            COUNT(IDInsurance) / COUNT(IDPatient) * 100 AS 'percentageInsured',
-            (SELECT COUNT(IDPatient) FROM patient WHERE IDInsurance IS NULL) / COUNT(IDPatient) * 100 AS 'percentageUninsured'
+            COUNT(IDInsurance) / COUNT(IDPatient) * 100 AS percentageInsured,
+            (SELECT COUNT(IDPatient) FROM patient WHERE IDInsurance IS NULL) / COUNT(IDPatient) * 100 AS percentageUninsured
         FROM patient;
         """;
 
@@ -25,8 +27,11 @@ public class PatientModelForInssurence {
                         resultSet.getDouble("percentageUninsured")
                 };
             }
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
 
+        // Return default values if no data is found or an exception occurs
         return new double[]{0.0, 0.0};
     }
 }
