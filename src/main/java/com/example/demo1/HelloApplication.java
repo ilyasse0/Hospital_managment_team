@@ -18,7 +18,21 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader3 = new FXMLLoader(HelloApplication.class.getResource("Vis3FreqTest.fxml"));
         /// / ikrame ghraphes !!!!
         FXMLLoader fxmlLoader4 = new FXMLLoader(HelloApplication.class.getResource("NumberPatientIKR.fxml"));
-        FXMLLoader fxmlLoader5 = new FXMLLoader(HelloApplication.class.getResource("AppointmentNumber.fxml"));
+        FXMLLoader fxmlLoader5 = new FXMLLoader(HelloApplication.class.getResource("AppointmentNumberIKR.fxml"));
+
+
+        /// / halza graphes !!!!!
+        FXMLLoader fxmlLoader6 = new FXMLLoader(HelloApplication.class.getResource("AppointmentPerYearAndServiceHMZ.fxml"));
+
+
+        ///  khadija
+
+        FXMLLoader fxmlLoader7 = new FXMLLoader(HelloApplication.class.getResource("GenderAgeKDJ.fxml"));
+        FXMLLoader fxmlLoader8 = new FXMLLoader(HelloApplication.class.getResource("InsuranceClaimsKDJ.fxml"));
+        FXMLLoader fxmlLoader9 = new FXMLLoader(HelloApplication.class.getResource("TestResultKDJ.fxml"));
+
+
+
 
 
         // Create tabs for each graph
@@ -36,8 +50,29 @@ public class HelloApplication extends Application {
         Tab tab5 = new Tab("Number of Appointemtns", fxmlLoader5.load());
         tab4.setClosable(false);
 
+        /// /////
+
+
+        Tab tab6 = new Tab("Progress Bar", fxmlLoader6.load());
+        tab4.setClosable(false);
+
+        /// /////
+
+        Tab tab7 = new Tab("Number of Appointemtns", fxmlLoader7.load());
+        tab4.setClosable(false);
+
+        Tab tab8 = new Tab("Inssurance Claim", fxmlLoader8.load());
+        tab4.setClosable(false);
+
+        Tab tab9 = new Tab("Test Result time", fxmlLoader9.load());
+        tab4.setClosable(false);
+
+
+
+
+
         // Add tabs to the TabPane
-        tabPane.getTabs().addAll(tab1, tab2, tab3 , tab4 , tab5);
+        tabPane.getTabs().addAll(tab1, tab2, tab3 , tab4 , tab5 ,  tab6 ,  tab7 ,  tab8 , tab9);
 
         // Set up the scene and stage
         Scene scene = new Scene(tabPane, 800, 600);

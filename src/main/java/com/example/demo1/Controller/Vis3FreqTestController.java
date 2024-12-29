@@ -32,7 +32,15 @@ public class Vis3FreqTestController {
         series.setName("Frequency");
 
         for (TestFreqModel.TestData testData : data) {
-            series.getData().add(new XYChart.Data<>(testData.getFrequency(), testData.getTestName()));
+            XYChart.Data<Number, String> chartData = new XYChart.Data<>(testData.getFrequency(), testData.getTestName());
+            series.getData().add(chartData);
+
+            // Apply color to the bar
+            chartData.nodeProperty().addListener((observable, oldValue, newValue) -> {
+                if (newValue != null) { // Node is now added to the scene
+                    newValue.setStyle("-fx-bar-fill: #81C784;");
+                }
+            });
         }
 
         // Add the series to the bar chart

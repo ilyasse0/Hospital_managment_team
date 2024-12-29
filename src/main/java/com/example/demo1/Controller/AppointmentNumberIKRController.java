@@ -51,10 +51,25 @@ public class AppointmentNumberIKRController {
         for (int i = 1; i <= 12; i++) {
             String monthName = xAxis.getCategories().get(i - 1);
             int count = data.getOrDefault(i, 0); // 0 if no data for the month
-            series.getData().add(new XYChart.Data<>(monthName, count));
+            XYChart.Data<String, Number> chartData = new XYChart.Data<>(monthName, count);
+            series.getData().add(chartData);
+
+            // Apply color to the bar
+            chartData.nodeProperty().addListener((observable, oldNode, newNode) -> {
+                if (newNode != null) { // Node is now added to the scene graph
+                    newNode.setStyle("-fx-bar-fill: #81C784;"); // Replace with desired color
+                }
+            });
         }
 
         // Add the series to the chart
         barChart.getData().add(series);
+
+        // Style the legend
+        barChart.lookupAll(".chart-legend-item-symbol").forEach(node -> {
+            node.setStyle("-fx-background-color: #81C784;"); // Match the bar color
+        });
     }
+
+
 }

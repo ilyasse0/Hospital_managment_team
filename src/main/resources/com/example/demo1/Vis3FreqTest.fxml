@@ -12,13 +12,14 @@
 <AnchorPane xmlns="http://javafx.com/javafx"
             xmlns:fx="http://javafx.com/fxml"
             fx:controller="com.example.demo1.Controller.Vis3FreqTestController"
-            prefHeight="400.0" prefWidth="600.0">
+            prefHeight="400.0" prefWidth="600.0"
+            stylesheets="@style1.css">
 
     <BarChart fx:id="barChart"
               layoutX="50.0" layoutY="50.0"
               prefHeight="300.0" prefWidth="500.0">
         <yAxis>
-            <CategoryAxis fx:id="yAxis" label="Test Services" />
+            <CategoryAxis  fx:id="yAxis" label="Test Services" />
         </yAxis>
         <xAxis>
             <NumberAxis fx:id="xAxis" label="Frequency" />
