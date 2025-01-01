@@ -32,6 +32,12 @@ public class HelloApplication extends Application {
         FXMLLoader fxmlLoader9 = new FXMLLoader(HelloApplication.class.getResource("TestResultKDJ.fxml"));
 
 
+        /// /// kEchfi
+
+        FXMLLoader fxmlLoader10 = new FXMLLoader(HelloApplication.class.getResource("PatientsViewKFC.fxml"));
+        FXMLLoader fxmlLoader11 = new FXMLLoader(HelloApplication.class.getResource("FidelityViewKFC.fxml"));
+
+
 
 
 
@@ -67,12 +73,16 @@ public class HelloApplication extends Application {
         Tab tab9 = new Tab("Test Result time", fxmlLoader9.load());
         tab4.setClosable(false);
 
-
+        /// /////
+        Tab tab10 = new Tab("NBR of patient", fxmlLoader10.load());
+        tab4.setClosable(false);
+        Tab tab11= new Tab("FIDELETY", fxmlLoader11.load());
+        tab4.setClosable(false);
 
 
 
         // Add tabs to the TabPane
-        tabPane.getTabs().addAll(tab1, tab2, tab3 , tab4 , tab5 ,  tab6 ,  tab7 ,  tab8 , tab9);
+        tabPane.getTabs().addAll(tab1, tab2, tab3 , tab4 , tab5 ,  tab6 ,  tab7 ,  tab8 , tab9 , tab10 , tab11);
 
         // Set up the scene and stage
         Scene scene = new Scene(tabPane, 800, 600);
